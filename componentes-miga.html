@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sistema de componentes MIGA · Referencia visual</title>
+<meta name="description" content="Catálogo interno de componentes reutilizables MIGA: botones rebanada, tarjetas orgánicas, migas de progreso y marcos de foto.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=DM+Sans:wght@400;500;700&family=DM+Mono:wght@400;500&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body data-pagina="componentes">
+
+<a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+<header class="cabecera con-fondo">
+  <a class="logo-header" href="index.html" aria-label="MIGA, inicio">
+    <span class="logo-texto">miga</span>
+  </a>
+  <a class="btn btn-fantasma" href="index.html" style="font-size:.9rem">← Volver al sitio</a>
+</header>
+
+<main id="contenido">
+
+  <section class="hero" style="min-height:48svh;padding-top:6rem">
+    <div class="wrap centrado">
+      <span class="etiqueta">Design system</span>
+      <h1>Sistema de componentes MIGA</h1>
+      <p class="sub" style="max-width:620px;margin:1.2rem auto 0;color:var(--gris)">
+        Referencia visual para construir secciones nuevas con coherencia.
+        La rebanada solo en CTAs y protagonistas; migas y bordes orgánicos para el resto.
+      </p>
+    </div>
+  </section>
+
+  <section class="seccion-arena">
+    <div class="wrap">
+
+      <!-- MigaSliceButton -->
+      <div class="miga-showcase-block">
+        <h2>MigaSliceButton</h2>
+        <p class="miga-showcase-desc">Botón principal con silueta de rebanada. Reservar para CTAs y acciones protagonistas.</p>
+        <div class="miga-showcase-row">
+          <a class="miga-slice-btn miga-slice-btn--primary miga-slice-btn--large" href="#">Large · Hero</a>
+          <a class="miga-slice-btn miga-slice-btn--primary miga-slice-btn--creador" href="#">Primary · Creador</a>
+          <button type="button" class="miga-slice-btn miga-slice-btn--secondary">Secondary</button>
+          <a class="miga-slice-btn miga-slice-btn--primary miga-slice-btn--compact" href="#">Compact</a>
+          <button type="button" class="miga-slice-btn miga-slice-btn--primary" disabled>Disabled</button>
+        </div>
+        <p class="miga-code-hint">.miga-slice-btn · --primary · --secondary · --creador · --large · --compact · :disabled</p>
+      </div>
+
+      <!-- MigaFeaturedCard -->
+      <div class="miga-showcase-block">
+        <h2>MigaFeaturedCard</h2>
+        <p class="miga-showcase-desc">Tarjeta protagonista con silueta de rebanada grande. Opcional mordisco para recomendados.</p>
+        <div class="miga-rejilla miga-rejilla--2">
+          <article class="miga-featured-card miga-featured-card--negocio">
+            <div class="miga-featured-card__inner">
+              <span class="miga-featured-card__tag">MigaColab</span>
+              <h3>Tu local ya tiene historias</h3>
+              <p>Para negocios que quieren probar colaboraciones sin agencia ni contratos raros.</p>
+              <div class="miga-featured-card__cta">
+                <a class="miga-slice-btn miga-slice-btn--primary miga-slice-btn--compact" href="migacolab.html">Cuéntanos tu local</a>
+              </div>
+            </div>
+          </article>
+          <article class="miga-featured-card miga-featured-card--creador miga-featured-card--mordisco">
+            <div class="miga-featured-card__inner">
+              <span class="miga-featured-card__tag">Recomendado</span>
+              <h3>Primera hornada</h3>
+              <p>Con mordisco: recorte orgánico en la silueta de rebanada. Ideal para planes destacados.</p>
+              <div class="miga-featured-card__cta">
+                <a class="miga-slice-btn miga-slice-btn--primary miga-slice-btn--creador miga-slice-btn--compact" href="migainfluencer.html">Entrar como creador/a</a>
+              </div>
+            </div>
+          </article>
+        </div>
+        <p class="miga-code-hint">.miga-featured-card · --negocio · --creador · --mordisco</p>
+      </div>
+
+      <!-- MigaOrganicCard -->
+      <div class="miga-showcase-block">
+        <h2>MigaOrganicCard</h2>
+        <p class="miga-showcase-desc">Contenedor secundario con borde orgánico. Menos literal que el pan: beneficios y explicaciones.</p>
+        <div class="miga-rejilla miga-rejilla--3">
+          <article class="miga-organic-card">
+            <span class="mano">beneficio</span>
+            <h3>Llega a gente de tu zona</h3>
+            <p>No a medio millón de desconocidos. A quien puede venir andando.</p>
+          </article>
+          <article class="miga-organic-card miga-organic-card--alt miga-organic-card--menta">
+            <h3>Contenido real</h3>
+            <p>Reels y stories hechos por gente que pisa tu local de verdad.</p>
+          </article>
+          <article class="miga-organic-card miga-organic-card--alt miga-organic-card--arena">
+            <h3>Prueba sin presión</h3>
+            <p>Empieza con una colaboración y decide después.</p>
+          </article>
+        </div>
+        <p class="miga-code-hint">.miga-organic-card · --alt · --menta · --arena</p>
+      </div>
+
+      <!-- MigaCrumbProgress -->
+      <div class="miga-showcase-block">
+        <h2>MigaCrumbProgress</h2>
+        <p class="miga-showcase-desc">Barra de progreso de formularios compuesta por migas. Sincronizable con <code>data-miga-step</code> en fieldsets.</p>
+        <div class="form-tarjeta" style="max-width:100%">
+          <div
+            class="miga-crumb-progress"
+            data-miga-crumb-progress
+            role="progressbar"
+            aria-valuemin="1"
+            aria-valuemax="4"
+            aria-valuenow="2"
+            aria-label="Progreso del formulario"
+          >
+            <ol class="miga-crumb-progress__track">
+              <li class="miga-crumb-progress__step miga-crumb-progress__step--done" data-step="0">
+                <span class="miga-crumb-progress__crumb" aria-hidden="true"></span>
+                <span class="miga-crumb-progress__label">Contacto</span>
+              </li>
+              <li class="miga-crumb-progress__step miga-crumb-progress__step--current" data-step="1">
+                <span class="miga-crumb-progress__crumb" aria-hidden="true"></span>
+                <span class="miga-crumb-progress__label">Local</span>
+              </li>
+              <li class="miga-crumb-progress__step" data-step="2">
+                <span class="miga-crumb-progress__crumb" aria-hidden="true"></span>
+                <span class="miga-crumb-progress__label">Objetivo</span>
+              </li>
+              <li class="miga-crumb-progress__step" data-step="3">
+                <span class="miga-crumb-progress__crumb" aria-hidden="true"></span>
+                <span class="miga-crumb-progress__label">Enviar</span>
+              </li>
+            </ol>
+          </div>
+          <p style="color:var(--gris);font-size:.95rem">Paso 2 de 4 — ejemplo estático. En formularios reales, incluir <code>miga-components.js</code>.</p>
+        </div>
+        <p class="miga-code-hint">.miga-crumb-progress · __step--done · __step--current · data-miga-crumb-progress</p>
+      </div>
+
+      <!-- MigaCrumbTrail -->
+      <div class="miga-showcase-block">
+        <h2>MigaCrumbTrail</h2>
+        <p class="miga-showcase-desc">Ruta de migas que conecta etapas de un proceso. Menos CTA, más orientación.</p>
+        <nav class="miga-crumb-trail" aria-label="Cómo funciona MigaColab" data-active="1">
+          <ol class="miga-crumb-trail__list">
+            <li class="miga-crumb-trail__item miga-crumb-trail__item--done">
+              <div class="miga-crumb-trail__node">
+                <span class="miga-crumb-trail__num">Paso</span>
+                <span class="miga-crumb-trail__title">Nos cuentas</span>
+                <span class="miga-crumb-trail__desc">Qué es tu local y qué quieres mover</span>
+              </div>
+              <span class="miga-crumb-trail__connector" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+            </li>
+            <li class="miga-crumb-trail__item miga-crumb-trail__item--active">
+              <div class="miga-crumb-trail__node">
+                <span class="miga-crumb-trail__num">Paso</span>
+                <span class="miga-crumb-trail__title">Hablamos</span>
+                <span class="miga-crumb-trail__desc">Te llamamos en 48 horas</span>
+              </div>
+              <span class="miga-crumb-trail__connector" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
+            </li>
+            <li class="miga-crumb-trail__item">
+              <div class="miga-crumb-trail__node">
+                <span class="miga-crumb-trail__num">Paso</span>
+                <span class="miga-crumb-trail__title">Colaboras</span>
+                <span class="miga-crumb-trail__desc">Primera hornada con creadores</span>
+              </div>
+            </li>
+          </ol>
+        </nav>
+        <p class="miga-code-hint">.miga-crumb-trail · data-active="N" · __item--done · __item--active</p>
+      </div>
+
+      <!-- MigaPhotoFrame -->
+      <div class="miga-showcase-block">
+        <h2>MigaPhotoFrame</h2>
+        <p class="miga-showcase-desc">Marco orgánico para retratos de Lucía y Carlota. Sin avatar circular genérico.</p>
+        <div class="miga-rejilla miga-rejilla--2">
+          <div class="miga-photo-frame-row">
+            <figure class="miga-photo-frame miga-photo-frame--lucia">
+              <div class="miga-photo-frame__border">
+                <span class="miga-photo-frame__placeholder" aria-hidden="true">L</span>
+              </div>
+              <figcaption class="miga-photo-frame__caption">Lucía · Marca</figcaption>
+            </figure>
+            <div>
+              <h3>Lucía Menéndez Álvarez</h3>
+              <p class="rol" style="font-family:var(--f-mono);font-size:var(--fs-label);text-transform:uppercase;letter-spacing:.14em;color:var(--gris);margin:.2rem 0 .8rem">Cofundadora · Comercial</p>
+              <p style="color:var(--gris)">Marco con acento corteza. Sustituir placeholder por <code>&lt;img class="miga-photo-frame__img"&gt;</code> cuando haya foto.</p>
+            </div>
+          </div>
+          <div class="miga-photo-frame-row">
+            <figure class="miga-photo-frame miga-photo-frame--carlota">
+              <div class="miga-photo-frame__border">
+                <span class="miga-photo-frame__placeholder" aria-hidden="true">C</span>
+              </div>
+              <figcaption class="miga-photo-frame__caption">Carlota · Plataforma</figcaption>
+            </figure>
+            <div>
+              <h3>Carlota Menéndez Álvarez</h3>
+              <p class="rol" style="font-family:var(--f-mono);font-size:var(--fs-label);text-transform:uppercase;letter-spacing:.14em;color:var(--gris);margin:.2rem 0 .8rem">Cofundadora · Técnica</p>
+              <p style="color:var(--gris)">Asimetría controlada: inclinación opuesta y borde verde. Hover suaviza la rotación.</p>
+            </div>
+          </div>
+        </div>
+        <p class="miga-code-hint">.miga-photo-frame · --lucia · --carlota · .miga-photo-frame-row</p>
+      </div>
+
+      <!-- Composición ejemplo -->
+      <div class="miga-showcase-block">
+        <h2>Composición de ejemplo</h2>
+        <p class="miga-showcase-desc">Cómo combinar componentes sin convertir todo en pan.</p>
+        <div class="miga-rejilla miga-rejilla--2" style="align-items:start">
+          <article class="miga-featured-card miga-featured-card--negocio">
+            <div class="miga-featured-card__inner">
+              <span class="miga-featured-card__tag">Protagonista</span>
+              <h3>Un CTA con rebanada</h3>
+              <p>Solo aquí la silueta grande de pan.</p>
+              <div class="miga-featured-card__cta">
+                <div class="miga-slice-group">
+                  <a class="miga-slice-btn miga-slice-btn--primary" href="migacolab.html">Acción principal</a>
+                  <a class="miga-slice-btn miga-slice-btn--secondary miga-slice-btn--compact" href="planes.html">Ver planes</a>
+                </div>
+              </div>
+            </div>
+          </article>
+          <div style="display:flex;flex-direction:column;gap:1rem">
+            <article class="miga-organic-card">
+              <h3>Beneficio orgánico</h3>
+              <p>Sin rebanada. Borde y textura sutiles.</p>
+            </article>
+            <article class="miga-organic-card miga-organic-card--alt">
+              <h3>Otro bloque secundario</h3>
+              <p>Alternar --alt para ritmo visual en rejillas.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+
+      <p class="nota-honesta" style="margin-top:2rem">
+        Fragmentos HTML en <strong>components/miga-snippets.html</strong> ·
+        CSS en <strong>css/components/miga-system.css</strong> ·
+        JS opcional en <strong>miga-components.js</strong>
+      </p>
+
+    </div>
+  </section>
+
+  <section class="seccion-oscura">
+    <div class="wrap centrado">
+      <h2>Componentes en fondo oscuro</h2>
+      <p style="max-width:520px;margin:1rem auto 2rem;color:#c9c5bd">Verificar contraste y legibilidad en secciones <code>.seccion-oscura</code>.</p>
+      <div class="miga-rejilla miga-rejilla--2" style="max-width:720px;margin:0 auto">
+        <article class="miga-featured-card miga-featured-card--creador">
+          <div class="miga-featured-card__inner">
+            <span class="miga-featured-card__tag">Destacado</span>
+            <h3>Tarjeta en oscuro</h3>
+            <p>La rebanada mantiene luminosidad sobre fondo negro.</p>
+          </div>
+        </article>
+        <article class="miga-organic-card">
+          <h3>Tarjeta orgánica</h3>
+          <p>Borde suave adaptado al tema oscuro.</p>
+        </article>
+      </div>
+      <div class="miga-slice-group miga-slice-group--center" style="margin-top:2rem">
+        <a class="miga-slice-btn miga-slice-btn--primary miga-slice-btn--creador" href="migainfluencer.html">CTA creador</a>
+        <a class="miga-slice-btn miga-slice-btn--secondary" href="index.html">Volver</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="pie">
+  <div class="pie-legal" style="border-top:0;margin-top:0;padding-top:2rem">
+    <span>© 2026 MIGA · Sistema de componentes (referencia interna)</span>
+    <span><a href="index.html">Volver al sitio</a></span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<script src="miga-components.js"></script>
+</body>
+</html>

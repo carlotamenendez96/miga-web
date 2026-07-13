@@ -1,0 +1,166 @@
+<!-- ============================================================
+     MIGA · Fragmentos HTML reutilizables
+     Copiar/pegar en cualquier página. Requiere styles.css.
+     ============================================================ -->
+
+<!-- ── MigaSliceButton ─────────────────────────────────────── -->
+
+<!-- Primary (CTA negocio) -->
+<a class="miga-slice-btn miga-slice-btn--primary" href="#">Texto del CTA</a>
+
+<!-- Secondary -->
+<button type="button" class="miga-slice-btn miga-slice-btn--secondary">Acción secundaria</button>
+
+<!-- Creador (verde) -->
+<a class="miga-slice-btn miga-slice-btn--primary miga-slice-btn--creador" href="#">Entrar como creador/a</a>
+
+<!-- Compact -->
+<a class="miga-slice-btn miga-slice-btn--primary miga-slice-btn--compact" href="#">Ver más</a>
+
+<!-- Disabled -->
+<button type="button" class="miga-slice-btn miga-slice-btn--primary" disabled>Enviando…</button>
+
+<!-- Grupo -->
+<div class="miga-slice-group miga-slice-group--center">
+  <a class="miga-slice-btn miga-slice-btn--primary" href="#">Principal</a>
+  <a class="miga-slice-btn miga-slice-btn--secondary" href="#">Secundario</a>
+</div>
+
+
+<!-- ── MigaFeaturedCard ────────────────────────────────────── -->
+
+<article class="miga-featured-card miga-featured-card--negocio">
+  <div class="miga-featured-card__inner">
+    <span class="miga-featured-card__tag">Destacado</span>
+    <h3>Título protagonista</h3>
+    <p>Descripción breve para recomendados o contenido clave.</p>
+    <div class="miga-featured-card__cta">
+      <a class="miga-slice-btn miga-slice-btn--primary miga-slice-btn--compact" href="#">Acción</a>
+    </div>
+  </div>
+</article>
+
+<!-- Con mordisco -->
+<article class="miga-featured-card miga-featured-card--negocio miga-featured-card--mordisco">
+  <div class="miga-featured-card__inner">
+    <span class="miga-featured-card__tag">Recomendado</span>
+    <h3>Plan con mordisco</h3>
+    <p>La silueta de rebanada incluye un recorte orgánico de mordisco.</p>
+  </div>
+</article>
+
+
+<!-- ── MigaOrganicCard ─────────────────────────────────────── -->
+
+<article class="miga-organic-card">
+  <span class="mano">beneficio</span>
+  <h3>Título del bloque</h3>
+  <p>Explicación secundaria con borde orgánico, sin literalidad de pan.</p>
+</article>
+
+<!-- Variante alterna (asimetría en rejillas) -->
+<article class="miga-organic-card miga-organic-card--alt miga-organic-card--menta">
+  <h3>Segundo beneficio</h3>
+  <p>Alternar --alt en rejillas para composición menos perfecta.</p>
+</article>
+
+
+<!-- ── MigaCrumbProgress ───────────────────────────────────── -->
+
+<div
+  class="miga-crumb-progress"
+  data-miga-crumb-progress
+  role="progressbar"
+  aria-valuemin="1"
+  aria-valuemax="4"
+  aria-valuenow="1"
+  aria-label="Progreso del formulario"
+>
+  <ol class="miga-crumb-progress__track">
+    <li class="miga-crumb-progress__step miga-crumb-progress__step--current" data-step="0">
+      <span class="miga-crumb-progress__crumb" aria-hidden="true"></span>
+      <span class="miga-crumb-progress__label">Datos</span>
+    </li>
+    <li class="miga-crumb-progress__step" data-step="1">
+      <span class="miga-crumb-progress__crumb" aria-hidden="true"></span>
+      <span class="miga-crumb-progress__label">Local</span>
+    </li>
+    <li class="miga-crumb-progress__step" data-step="2">
+      <span class="miga-crumb-progress__crumb" aria-hidden="true"></span>
+      <span class="miga-crumb-progress__label">Objetivo</span>
+    </li>
+    <li class="miga-crumb-progress__step" data-step="3">
+      <span class="miga-crumb-progress__crumb" aria-hidden="true"></span>
+      <span class="miga-crumb-progress__label">Enviar</span>
+    </li>
+  </ol>
+</div>
+
+<!-- Vincular con fieldsets: data-miga-step="0" en cada sección del formulario -->
+
+
+<!-- ── MigaCrumbTrail ──────────────────────────────────────── -->
+
+<nav class="miga-crumb-trail" aria-label="Pasos del proceso" data-active="1">
+  <ol class="miga-crumb-trail__list">
+    <li class="miga-crumb-trail__item miga-crumb-trail__item--done">
+      <div class="miga-crumb-trail__node">
+        <span class="miga-crumb-trail__num">Paso</span>
+        <span class="miga-crumb-trail__title">Te apuntas</span>
+        <span class="miga-crumb-trail__desc">Rellenas el formulario</span>
+      </div>
+      <span class="miga-crumb-trail__connector" aria-hidden="true">
+        <span></span><span></span><span></span><span></span>
+      </span>
+    </li>
+    <li class="miga-crumb-trail__item miga-crumb-trail__item--active">
+      <div class="miga-crumb-trail__node">
+        <span class="miga-crumb-trail__num">Paso</span>
+        <span class="miga-crumb-trail__title">Hablamos</span>
+        <span class="miga-crumb-trail__desc">Te llamamos en 48 h</span>
+      </div>
+      <span class="miga-crumb-trail__connector" aria-hidden="true">
+        <span></span><span></span><span></span><span></span>
+      </span>
+    </li>
+    <li class="miga-crumb-trail__item">
+      <div class="miga-crumb-trail__node">
+        <span class="miga-crumb-trail__num">Paso</span>
+        <span class="miga-crumb-trail__title">Colaboras</span>
+        <span class="miga-crumb-trail__desc">Primera hornada</span>
+      </div>
+    </li>
+  </ol>
+</nav>
+
+
+<!-- ── MigaPhotoFrame ──────────────────────────────────────── -->
+
+<!-- Con foto -->
+<figure class="miga-photo-frame miga-photo-frame--lucia">
+  <div class="miga-photo-frame__border">
+    <img class="miga-photo-frame__img" src="assets/lucia.jpg" alt="Lucía Menéndez Álvarez" width="168" height="210">
+  </div>
+  <figcaption class="miga-photo-frame__caption">Lucía · Marca</figcaption>
+</figure>
+
+<!-- Placeholder (sin foto aún) -->
+<figure class="miga-photo-frame miga-photo-frame--carlota">
+  <div class="miga-photo-frame__border">
+    <span class="miga-photo-frame__placeholder" aria-hidden="true">C</span>
+  </div>
+  <figcaption class="miga-photo-frame__caption">Carlota · Plataforma</figcaption>
+</figure>
+
+<!-- Layout foto + bio -->
+<div class="miga-photo-frame-row">
+  <figure class="miga-photo-frame miga-photo-frame--lucia">
+    <div class="miga-photo-frame__border">
+      <span class="miga-photo-frame__placeholder" aria-hidden="true">L</span>
+    </div>
+  </figure>
+  <div>
+    <h3>Lucía Menéndez Álvarez</h3>
+    <p>Texto de biografía…</p>
+  </div>
+</div>
