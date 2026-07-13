@@ -188,6 +188,9 @@
     var pasos = Array.from(form.querySelectorAll(".form-flujo__paso"));
     if (!pasos.length) return;
 
+    /* Evita validación HTML5 en pasos ocultos (bloqueaba el envío sin avisar) */
+    form.setAttribute("novalidate", "");
+
     var nombreForm = form.dataset.form;
     var storageKey = "miga_flujo_" + nombreForm;
     var crumbBar = form.querySelector(".miga-crumb-bar");
@@ -221,6 +224,34 @@
       var name = regla.slice(0, sep);
       var valor = regla.slice(sep + 1);
       return !!form.querySelector('input[name="' + name + '"][value="' + valor + '"]:checked');
+    }
+
+    function marcarRequeridosOriginales() {
+      form.querySelectorAll("input, select, textarea").forEach(function (el) {
+        if (el.type === "hidden" || el.name === "bot-field") return;
+        if (el.hasAttribute("required")) el.dataset.requeridoFlujo = "1";
+      });
+    }
+
+    /** Solo el paso visible/activo mantiene required; el resto no bloquea el submit */
+    function sincronizarRequeridos() {
+      pasos.forEach(function (paso, i) {
+        var activo = i === pasoActual;
+        var visible = pasoVisible(paso);
+        paso.querySelectorAll("input, select, textarea").forEach(function (el) {
+          if (el.type === "hidden" || el.name === "bot-field") return;
+          var inline = el.closest("[data-condicional-inline]");
+          if (inline && inline.hidden) {
+            el.removeAttribute("required");
+            return;
+          }
+          if (activo && visible && el.dataset.requeridoFlujo === "1") {
+            el.setAttribute("required", "");
+          } else {
+            el.removeAttribute("required");
+          }
+        });
+      });
     }
 
     function pasoVisible(paso) {
@@ -459,6 +490,7 @@
     function mostrarPaso(index, direccion) {
       pasoActual = index;
       actualizarCondicionalesInline();
+      sincronizarRequeridos();
       pasos.forEach(function (paso, i) {
         paso.classList.remove("form-flujo__paso--activo", "form-flujo__paso--atras");
         if (i === index) {
@@ -526,8 +558,10 @@
       }, 420);
     }
 
+    marcarRequeridosOriginales();
     restaurarSesion();
     actualizarCondicionalesInline();
+    sincronizarRequeridos();
     mostrarPaso(pasoActual, "adelante");
 
     form.addEventListener("input", function () {
@@ -578,8 +612,12 @@
         e.preventDefault();
         return;
       }
+      sincronizarRequeridos();
       if (!validarPaso(pasoActual)) {
         e.preventDefault();
+        pasos[pasoActual].scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "center" });
+        var focoConsent = pasos[pasoActual].querySelector('.consentimiento input[type="checkbox"]');
+        if (focoConsent && !focoConsent.checked) focoConsent.focus();
         return;
       }
       for (var i = 0; i < pasos.length; i++) {
