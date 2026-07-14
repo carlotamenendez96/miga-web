@@ -487,7 +487,8 @@
       });
     }
 
-    function mostrarPaso(index, direccion) {
+    function mostrarPaso(index, direccion, opciones) {
+      opciones = opciones || {};
       pasoActual = index;
       actualizarCondicionalesInline();
       sincronizarRequeridos();
@@ -529,7 +530,9 @@
         if (foco) foco.focus({ preventScroll: true });
       }
 
-      form.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "start" });
+      if (opciones.scroll !== false) {
+        form.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "start" });
+      }
     }
 
     function avanzar() {
@@ -562,7 +565,7 @@
     restaurarSesion();
     actualizarCondicionalesInline();
     sincronizarRequeridos();
-    mostrarPaso(pasoActual, "adelante");
+    mostrarPaso(pasoActual, "adelante", { scroll: false });
 
     form.addEventListener("input", function () {
       if (!empezado && !esPasoBienvenida(pasos[pasoActual])) {
