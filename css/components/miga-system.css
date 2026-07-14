@@ -1268,19 +1268,6 @@
   pointer-events: none;
 }
 
-.miga-plan-slice::after {
-  content: "";
-  position: absolute;
-  top: 4px;
-  right: 18%;
-  width: 42px;
-  height: 38px;
-  border-radius: 50%;
-  background: var(--arena);
-  box-shadow: inset 2px 2px 4px rgba(15, 15, 15, 0.08);
-  pointer-events: none;
-}
-
 .miga-plan-slice:hover {
   transform: translateY(-4px) rotate(-0.2deg);
   filter: drop-shadow(0 10px 0 rgba(148, 80, 28, 0.45)) drop-shadow(0 14px 28px rgba(15, 15, 15, 0.12));
